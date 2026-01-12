@@ -19,11 +19,11 @@ architecture Behavioral of Vhdl1 is
 
     type state_type is (NS_Green, NS_Yellow, EW_Green, EW_Yellow);
     signal state, next_state : state_type;
-    signal counter : integer range 0 to 15 := 0; -- timer counter
+    signal counter : integer range 0 to 15 := 0;
 
 begin
 
-    -- Sequential process: state transition
+
     process(clk, reset)
     begin
         if reset = '1' then
@@ -39,7 +39,7 @@ begin
         end if;
     end process;
 
-    -- Combinational process: next state logic
+    
     process(state)
     begin
         case state is
@@ -56,10 +56,10 @@ begin
         end case;
     end process;
 
-    -- Output logic for lights
+    
     process(state)
     begin
-        -- Default all lights off
+    
         NS_red <= '0';
         NS_yel <= '0';
         NS_grn <= '0';
@@ -67,7 +67,7 @@ begin
         EW_yel <= '0';
         EW_grn <= '0';
 
-        case state is
+        
             when NS_Green =>
                 NS_grn <= '1';
                 EW_red <= '1';
