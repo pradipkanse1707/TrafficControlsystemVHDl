@@ -4,14 +4,14 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity traffic_light_controller is
     Port (
-        clk     : in  STD_LOGIC;       -- Clock input
-        reset   : in  STD_LOGIC;       -- Asynchronous reset
-        NS_red  : out STD_LOGIC;       -- North-South Red
-        NS_yel  : out STD_LOGIC;       -- North-South Yellow
-        NS_grn  : out STD_LOGIC;       -- North-South Green
-        EW_red  : out STD_LOGIC;       -- East-West Red
-        EW_yel  : out STD_LOGIC;       -- East-West Yellow
-        EW_grn  : out STD_LOGIC        -- East-West Green
+        clk     : in  STD_LOGIC;      
+        reset   : in  STD_LOGIC;       
+        NS_red  : out STD_LOGIC;      
+        NS_yel  : out STD_LOGIC;      
+        NS_grn  : out STD_LOGIC;      
+        EW_red  : out STD_LOGIC;       
+        EW_yel  : out STD_LOGIC;     
+        EW_grn  : out STD_LOGIC       
     );
 end traffic_light_controller;
 
@@ -59,7 +59,7 @@ begin
   
     process(state)
     begin
-        -- Default all lights off
+      
         NS_red <= '0';
         NS_yel <= '0';
         NS_grn <= '0';
@@ -87,4 +87,5 @@ begin
     end process;
 
 end Behavioral;
+
 
